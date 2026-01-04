@@ -50,14 +50,4 @@ export const tracks: Track[] = [
     modules: 9,
     difficulty: "Advanced",
   },
-  {
-    id: "copilot",
-    title: "GitHub Copilot",
-    description: "Master AI-powered coding assistance. Learn prompt engineering, Copilot Chat, and best practices for maximum productivity.",
-    icon: "Sparkles",
-    color: "blue",
-    duration: "6 hours",
-    modules: 7,
-    difficulty: "Beginner",
-  },
 ];
