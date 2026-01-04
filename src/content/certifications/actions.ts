@@ -273,4 +273,85 @@ jobs:
     { term: "Composite Action", definition: "A custom action that combines multiple steps into a single reusable action." },
     { term: "Reusable Workflow", definition: "A workflow that can be called from other workflows, promoting DRY principles in automation." },
   ],
+
+  mindmap: `
+# GitHub Actions Mind Map
+
+## 1. Workflow Structure
+### File Location
+- .github/workflows/
+- YAML format
+- Multiple workflows per repo
+
+### Components
+- name
+- on (triggers)
+- jobs
+- steps
+
+## 2. Triggers (Events)
+### Code Events
+- push
+- pull_request
+- create/delete
+
+### Scheduled
+- cron syntax
+- Timezone considerations
+
+### Manual
+- workflow_dispatch
+- repository_dispatch
+
+## 3. Jobs & Steps
+### Jobs
+- Run on runners
+- Parallel by default
+- Dependencies (needs)
+- Conditionals (if)
+
+### Steps
+- run (commands)
+- uses (actions)
+- with (inputs)
+- env (variables)
+
+## 4. Runners
+### GitHub-Hosted
+- ubuntu-latest
+- windows-latest
+- macos-latest
+
+### Self-Hosted
+- Custom hardware
+- Private networks
+- Special requirements
+
+## 5. Actions
+### Marketplace
+- Official actions
+- Community actions
+- Verified creators
+
+### Custom Actions
+- JavaScript actions
+- Docker actions
+- Composite actions
+
+## 6. Advanced Features
+### Matrix Strategy
+- Multiple configurations
+- Parallel execution
+- Fail-fast option
+
+### Secrets & Variables
+- Repository secrets
+- Organization secrets
+- Environment secrets
+
+### Caching
+- actions/cache
+- Dependency caching
+- Build caching
+  `,
 };

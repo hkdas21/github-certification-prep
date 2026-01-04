@@ -259,4 +259,93 @@ git push origin main
     { term: "Verified Domain", definition: "A domain verified by an organization to ensure email notifications and profile displays are trusted." },
     { term: "Migration CLI", definition: "GitHub's command-line tool for migrating repositories, organizations, and user data." },
   ],
+
+  mindmap: `
+# GitHub Administration Mind Map
+
+## 1. Organization Structure
+### Hierarchy
+- Enterprise account
+- Organizations
+- Teams
+- Repositories
+
+### Team Types
+- Visible teams
+- Secret teams
+- Nested teams
+- Parent teams
+
+## 2. Access Control
+### Roles
+- Owner
+- Member
+- Billing manager
+- Outside collaborator
+
+### Repository Permissions
+- Admin
+- Maintain
+- Write
+- Triage
+- Read
+
+## 3. Authentication
+### SAML SSO
+- Identity providers
+- Okta, Azure AD
+- OneLogin
+
+### SCIM
+- Auto-provisioning
+- User sync
+- Group sync
+
+### 2FA
+- Enforcement
+- Recovery codes
+- Security keys
+
+## 4. Policies
+### Branch Protection
+- Required reviews
+- Status checks
+- Signed commits
+- Push restrictions
+
+### Repository Rulesets
+- Multiple repos
+- Bypass lists
+- Enforcement
+
+### Code Owners
+- CODEOWNERS file
+- Auto-assignment
+- Required reviews
+
+## 5. Compliance
+### Audit Log
+- Event tracking
+- 180-day retention
+- API access
+- Log streaming
+
+### Exports
+- User data
+- Organization data
+- Migration archives
+
+## 6. Enterprise Features
+### GitHub Enterprise Cloud
+- SAML SSO
+- SCIM
+- IP allow lists
+- Audit log API
+
+### GitHub Enterprise Server
+- Self-hosted
+- LDAP/SAML
+- High availability
+- Clustering
+  `,
 };

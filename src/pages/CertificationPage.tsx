@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { BookOpen, HelpCircle, FlaskConical, Layers } from "lucide-react";
+import { BookOpen, HelpCircle, FlaskConical, Layers, Network } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Breadcrumb } from "@/components/Breadcrumb";
@@ -13,6 +13,7 @@ import { foundationsContent } from "@/content/certifications/foundations";
 import { actionsContent } from "@/content/certifications/actions";
 import { securityContent } from "@/content/certifications/security";
 import { adminContent } from "@/content/certifications/admin";
+import { copilotContent } from "@/content/certifications/copilot";
 import { cn } from "@/lib/utils";
 
 const contentMap: Record<string, typeof foundationsContent> = {
@@ -20,6 +21,7 @@ const contentMap: Record<string, typeof foundationsContent> = {
   actions: actionsContent,
   security: securityContent,
   admin: adminContent,
+  copilot: copilotContent,
 };
 
 const tabs = [
@@ -27,6 +29,7 @@ const tabs = [
   { id: "quizzes", label: "Quizzes", icon: HelpCircle },
   { id: "labs", label: "Labs", icon: FlaskConical },
   { id: "flashcards", label: "Flashcards", icon: Layers },
+  { id: "mindmap", label: "Mind Map", icon: Network },
 ];
 
 const CertificationPage = () => {
@@ -142,6 +145,26 @@ const CertificationPage = () => {
                     />
                   ))}
                 </div>
+              </div>
+            )}
+
+            {activeTab === "mindmap" && (
+              <div className="bg-card border border-border rounded-xl p-6 md:p-8">
+                <div className="text-center mb-8">
+                  <h2 className="text-2xl font-bold text-foreground mb-2">
+                    Mind Map
+                  </h2>
+                  <p className="text-muted-foreground">
+                    Visual overview of key concepts and their relationships.
+                  </p>
+                </div>
+                {content.mindmap ? (
+                  <MarkdownRenderer content={content.mindmap} />
+                ) : (
+                  <p className="text-center text-muted-foreground">
+                    Mind map content coming soon.
+                  </p>
+                )}
               </div>
             )}
           </motion.div>
