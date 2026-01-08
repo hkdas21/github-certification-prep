@@ -257,4 +257,59 @@ git push  # This should be blocked!
     { term: "Dependency Graph", definition: "A visual representation of all dependencies in a repository and their relationships." },
     { term: "Security Policy", definition: "A SECURITY.md file that provides instructions for reporting security vulnerabilities responsibly." },
   ],
+
+  mindmap: `
+# GitHub Advanced Security Mindmap
+
+\`\`\`mermaid
+mindmap
+  root((GitHub Security))
+    Code Scanning
+      CodeQL
+        Semantic Analysis
+        Custom Queries
+      Third-party Tools
+        SARIF Format
+      Alerts
+        Severity Levels
+        Remediation
+    Secret Scanning
+      Pattern Detection
+      Push Protection
+      Partner Alerts
+      Custom Patterns
+    Dependency Security
+      Dependabot
+        Alerts
+        Updates
+        Version Updates
+      Dependency Graph
+      SBOM
+    Supply Chain
+      Provenance
+      Attestations
+      Artifact Signing
+    Policies
+      SECURITY.md
+      Security Advisories
+      CVE Management
+\`\`\`
+
+## Security Workflow
+
+\`\`\`mermaid
+flowchart LR
+    A[Code Commit] --> B{Secret Scan}
+    B -->|Blocked| C[Push Protection]
+    B -->|Clean| D[Code Scanning]
+    D --> E{Vulnerabilities?}
+    E -->|Yes| F[Security Alert]
+    E -->|No| G[Dependency Review]
+    G --> H{Vulnerable Deps?}
+    H -->|Yes| I[Dependabot PR]
+    H -->|No| J[Merge Allowed]
+    F --> K[Fix Required]
+    I --> L[Update Dependencies]
+\`\`\`
+  `,
 };
