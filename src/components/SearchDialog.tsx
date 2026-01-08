@@ -100,30 +100,33 @@ export const SearchDialog = () => {
       });
 
       // Search in flashcards
-      content.flashcards?.forEach((card: { front: string; back: string }) => {
+      content.flashcards?.forEach((card: { front?: string; back?: string }) => {
+        const front = card?.front || "";
+        const back = card?.back || "";
         if (
-          card.front.toLowerCase().includes(lowerQuery) ||
-          card.back.toLowerCase().includes(lowerQuery)
+          front.toLowerCase().includes(lowerQuery) ||
+          back.toLowerCase().includes(lowerQuery)
         ) {
           results.push({
             trackId: track.id,
             trackTitle: track.title,
             section: "Flashcards",
-            title: card.front.slice(0, 60),
-            excerpt: card.back.slice(0, 150) + "...",
+            title: front.slice(0, 60),
+            excerpt: back.slice(0, 150) + "...",
           });
         }
       });
 
       // Search in quizzes
-      content.quizzes?.forEach((quiz: { question: string }) => {
-        if (quiz.question.toLowerCase().includes(lowerQuery)) {
+      content.quizzes?.forEach((quiz: { question?: string }) => {
+        const question = quiz?.question || "";
+        if (question.toLowerCase().includes(lowerQuery)) {
           results.push({
             trackId: track.id,
             trackTitle: track.title,
             section: "Quizzes",
-            title: quiz.question.slice(0, 60),
-            excerpt: quiz.question.slice(0, 150) + "...",
+            title: question.slice(0, 60),
+            excerpt: question.slice(0, 150) + "...",
           });
         }
       });
