@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Twitter, Linkedin } from "lucide-react";
+import { Github, Twitter, Linkedin, User } from "lucide-react";
 
 interface Contributor {
   name: string;
@@ -15,43 +15,43 @@ interface Contributor {
 
 const contributors: Contributor[] = [
   {
-    name: "Sarah Johnson",
-    title: "DevOps Engineer",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face",
-    bio: "Passionate about CI/CD and automation. Contributor to GitHub Actions content.",
+    name: "Contributor 1",
+    title: "Title / Role",
+    avatar: "",
+    bio: "Brief bio description goes here.",
     social: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
+      github: "#",
+      linkedin: "#",
     },
   },
   {
-    name: "Michael Chen",
-    title: "Security Architect",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-    bio: "10+ years in application security. Specializes in GitHub Advanced Security.",
+    name: "Contributor 2",
+    title: "Title / Role",
+    avatar: "",
+    bio: "Brief bio description goes here.",
     social: {
-      github: "https://github.com",
-      twitter: "https://twitter.com",
+      github: "#",
+      twitter: "#",
     },
   },
   {
-    name: "Emily Rodriguez",
-    title: "Platform Engineer",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-    bio: "GitHub Enterprise expert. Focuses on administration and governance.",
+    name: "Contributor 3",
+    title: "Title / Role",
+    avatar: "",
+    bio: "Brief bio description goes here.",
     social: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
+      github: "#",
+      linkedin: "#",
     },
   },
   {
-    name: "David Kim",
-    title: "AI Developer Advocate",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
-    bio: "Copilot enthusiast and prompt engineering specialist.",
+    name: "Contributor 4",
+    title: "Title / Role",
+    avatar: "",
+    bio: "Brief bio description goes here.",
     social: {
-      github: "https://github.com",
-      twitter: "https://twitter.com",
+      github: "#",
+      twitter: "#",
     },
   },
 ];
@@ -87,11 +87,17 @@ export const Contributors = () => {
             <div className="relative bg-card border border-border rounded-xl p-6 text-center hover:border-primary/30 transition-all duration-300">
               {/* Avatar */}
               <div className="relative mx-auto w-20 h-20 mb-4">
-                <img
-                  src={contributor.avatar}
-                  alt={contributor.name}
-                  className="w-full h-full rounded-full object-cover ring-2 ring-border group-hover:ring-primary/30 transition-all"
-                />
+                {contributor.avatar ? (
+                  <img
+                    src={contributor.avatar}
+                    alt={contributor.name}
+                    className="w-full h-full rounded-full object-cover ring-2 ring-border group-hover:ring-primary/30 transition-all"
+                  />
+                ) : (
+                  <div className="w-full h-full rounded-full bg-secondary ring-2 ring-border group-hover:ring-primary/30 transition-all flex items-center justify-center">
+                    <User className="w-8 h-8 text-muted-foreground" />
+                  </div>
+                )}
               </div>
 
               {/* Info */}
