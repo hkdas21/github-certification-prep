@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Twitter, Linkedin, Award, Users, Clock } from "lucide-react";
 import { bioData } from "@/content/bio";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 export const AuthorBio = () => {
   return (
@@ -23,7 +24,7 @@ export const AuthorBio = () => {
         >
           <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary to-accent opacity-75 blur-sm" />
           <img
-            src={bioData.avatar}
+            src={profilePhoto}
             alt={bioData.name}
             className="relative w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-2 border-border"
           />
