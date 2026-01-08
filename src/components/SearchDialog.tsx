@@ -141,16 +141,15 @@ export const SearchDialog = () => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button
-          variant="ghost"
-          className="gap-2 text-sm text-muted-foreground hover:text-foreground bg-secondary hover:bg-secondary/80 px-3"
+        <button
+          className="flex items-center gap-3 w-full max-w-md h-10 px-4 text-sm text-muted-foreground bg-secondary hover:bg-secondary/80 border border-border hover:border-primary/50 rounded-lg transition-all duration-200 group"
         >
-          <Search className="w-4 h-4" />
-          <span className="hidden sm:inline">Search...</span>
-          <kbd className="hidden md:inline-flex h-5 items-center gap-1 rounded border border-border bg-muted px-1.5 text-[10px] font-medium text-muted-foreground">
+          <Search className="w-4 h-4 shrink-0" />
+          <span className="flex-1 text-left">Search certifications...</span>
+          <kbd className="hidden sm:inline-flex h-5 items-center gap-1 rounded border border-border bg-muted px-1.5 text-[10px] font-medium text-muted-foreground group-hover:border-primary/30">
             ⌘K
           </kbd>
-        </Button>
+        </button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[550px] p-0">
         <DialogHeader className="p-4 pb-0">
