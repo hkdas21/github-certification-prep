@@ -13,6 +13,7 @@ import { foundationsContent } from "@/content/certifications/foundations";
 import { actionsContent } from "@/content/certifications/actions";
 import { securityContent } from "@/content/certifications/security";
 import { adminContent } from "@/content/certifications/admin";
+import { copilotContent } from "@/content/certifications/copilot";
 import { cn } from "@/lib/utils";
 
 const contentMap: Record<string, typeof foundationsContent> = {
@@ -20,6 +21,7 @@ const contentMap: Record<string, typeof foundationsContent> = {
   actions: actionsContent,
   security: securityContent,
   admin: adminContent,
+  copilot: copilotContent,
 };
 
 const tabs = [

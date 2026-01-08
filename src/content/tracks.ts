@@ -3,7 +3,7 @@ export interface Track {
   title: string;
   description: string;
   icon: string;
-  color: "blue" | "green" | "purple" | "orange";
+  color: "blue" | "green" | "purple" | "orange" | "cyan";
   duration: string;
   modules: number;
   difficulty: "Beginner" | "Intermediate" | "Advanced";
@@ -28,6 +28,16 @@ export const tracks: Track[] = [
     color: "green",
     duration: "12 hours",
     modules: 8,
+    difficulty: "Intermediate",
+  },
+  {
+    id: "copilot",
+    title: "GitHub Copilot",
+    description: "Master AI-powered development with GitHub Copilot. Learn prompt engineering, IDE integration, and best practices for AI-assisted coding.",
+    icon: "Sparkles",
+    color: "cyan",
+    duration: "10 hours",
+    modules: 7,
     difficulty: "Intermediate",
   },
   {
