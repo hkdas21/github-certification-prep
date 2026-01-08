@@ -50,7 +50,7 @@ Get started with automation using GitHub Actions for CI/CD.
 
 > **Pro Tip**: Focus on hands-on practice! The exam tests practical knowledge, not just theory.
   `,
-  
+
   quizzes: [
     {
       id: 1,
@@ -59,10 +59,11 @@ Get started with automation using GitHub Actions for CI/CD.
         "A folder containing project files and their complete history",
         "A backup service for code",
         "A social network for developers",
-        "A code editor"
+        "A code editor",
       ],
       correctAnswer: 0,
-      explanation: "A Git repository is a folder that contains all project files along with the complete history of changes made to those files."
+      explanation:
+        "A Git repository is a folder that contains all project files along with the complete history of changes made to those files.",
     },
     {
       id: 2,
@@ -71,10 +72,11 @@ Get started with automation using GitHub Actions for CI/CD.
         "git new-branch",
         "git create branch",
         "git branch <name> or git checkout -b <name>",
-        "git make branch"
+        "git make branch",
       ],
       correctAnswer: 2,
-      explanation: "You can create a new branch using 'git branch <name>' or 'git checkout -b <name>' which also switches to the new branch."
+      explanation:
+        "You can create a new branch using 'git branch <name>' or 'git checkout -b <name>' which also switches to the new branch.",
     },
     {
       id: 3,
@@ -83,10 +85,11 @@ Get started with automation using GitHub Actions for CI/CD.
         "A request to download code",
         "A proposal to merge changes from one branch to another",
         "A request for help from other developers",
-        "A way to delete branches"
+        "A way to delete branches",
       ],
       correctAnswer: 1,
-      explanation: "A Pull Request is a proposal to merge a set of changes from one branch into another, allowing for code review and discussion."
+      explanation:
+        "A Pull Request is a proposal to merge a set of changes from one branch into another, allowing for code review and discussion.",
     },
     {
       id: 4,
@@ -95,10 +98,11 @@ Get started with automation using GitHub Actions for CI/CD.
         "Creates a copy of the current branch",
         "Downloads a remote repository to your local machine",
         "Creates a new empty repository",
-        "Copies files between directories"
+        "Copies files between directories",
       ],
       correctAnswer: 1,
-      explanation: "The 'git clone' command creates a local copy of a remote repository, including all files, branches, and commit history."
+      explanation:
+        "The 'git clone' command creates a local copy of a remote repository, including all files, branches, and commit history.",
     },
     {
       id: 5,
@@ -107,13 +111,14 @@ Get started with automation using GitHub Actions for CI/CD.
         "Creating repositories",
         "Managing user permissions",
         "Automating workflows like CI/CD",
-        "Hosting websites"
+        "Hosting websites",
       ],
       correctAnswer: 2,
-      explanation: "GitHub Actions is primarily used for automating software workflows, including continuous integration and continuous deployment (CI/CD)."
+      explanation:
+        "GitHub Actions is primarily used for automating software workflows, including continuous integration and continuous deployment (CI/CD).",
     },
   ],
-  
+
   labs: `
 # Hands-on Labs: GitHub Foundations
 
@@ -216,26 +221,75 @@ git push -u origin feature/add-about-page
 ### Challenge
 Create a pull request on GitHub to merge your feature branch into main.
   `,
-  
+
   flashcards: [
-    { term: "Repository", definition: "A storage location for a project that contains all files and their complete revision history." },
-    { term: "Commit", definition: "A snapshot of changes made to files in a repository, with a unique identifier and message describing the changes." },
-    { term: "Branch", definition: "A parallel version of a repository that allows you to work on different features without affecting the main codebase." },
-    { term: "Pull Request", definition: "A proposal to merge changes from one branch into another, enabling code review and discussion before merging." },
-    { term: "Fork", definition: "A personal copy of another user's repository that lives on your account, allowing you to experiment without affecting the original." },
-    { term: "Clone", definition: "Creating a local copy of a remote repository on your machine, including all files, branches, and history." },
-    { term: "Merge", definition: "Combining changes from different branches into a single branch, integrating separate lines of development." },
-    { term: "Push", definition: "Uploading local repository content to a remote repository, sharing your commits with others." },
-    { term: "Pull", definition: "Fetching and downloading content from a remote repository and immediately updating the local repository to match." },
-    { term: "HEAD", definition: "A pointer to the current branch reference, representing the latest commit in your current working branch." },
-    { term: "Staging Area", definition: "An intermediate area where commits are prepared before being committed to the repository." },
-    { term: "Remote", definition: "A common repository that all team members use to exchange their changes, typically hosted on GitHub." },
+    {
+      term: "Repository",
+      definition: "A storage location for a project that contains all files and their complete revision history.",
+    },
+    {
+      term: "Commit",
+      definition:
+        "A snapshot of changes made to files in a repository, with a unique identifier and message describing the changes.",
+    },
+    {
+      term: "Branch",
+      definition:
+        "A parallel version of a repository that allows you to work on different features without affecting the main codebase.",
+    },
+    {
+      term: "Pull Request",
+      definition:
+        "A proposal to merge changes from one branch into another, enabling code review and discussion before merging.",
+    },
+    {
+      term: "Fork",
+      definition:
+        "A personal copy of another user's repository that lives on your account, allowing you to experiment without affecting the original.",
+    },
+    {
+      term: "Clone",
+      definition:
+        "Creating a local copy of a remote repository on your machine, including all files, branches, and history.",
+    },
+    {
+      term: "Merge",
+      definition:
+        "Combining changes from different branches into a single branch, integrating separate lines of development.",
+    },
+    {
+      term: "Push",
+      definition: "Uploading local repository content to a remote repository, sharing your commits with others.",
+    },
+    {
+      term: "Pull",
+      definition:
+        "Fetching and downloading content from a remote repository and immediately updating the local repository to match.",
+    },
+    {
+      term: "HEAD",
+      definition:
+        "A pointer to the current branch reference, representing the latest commit in your current working branch.",
+    },
+    {
+      term: "Staging Area",
+      definition: "An intermediate area where commits are prepared before being committed to the repository.",
+    },
+    {
+      term: "Remote",
+      definition:
+        "A common repository that all team members use to exchange their changes, typically hosted on GitHub.",
+    },
   ],
 
   mindmap: `
 # GitHub Foundations Mindmap
 
 \`\`\`mermaid
+---
+config:
+  theme: redux-color
+---
 mindmap
   root((GitHub Foundations))
     Git Basics
