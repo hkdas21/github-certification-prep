@@ -1,26 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { RotateCcw } from "lucide-react";
+import { RotateCcw, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface FlashCardProps {
   term: string;
   definition: string;
   index: number;
+  isViewed?: boolean;
+  onView?: (term: string) => void;
 }
 
-export const FlashCard = ({ term, definition, index }: FlashCardProps) => {
+export const FlashCard = ({ term, definition, index, isViewed = false, onView }: FlashCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleFlip = () => {
+    if (!isFlipped && onView) {
+      onView(term);
+    }
+    setIsFlipped(!isFlipped);
+  };
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05 }}
-      className="perspective-1000"
+      className="perspective-1000 relative"
     >
+      {isViewed && (
+        <div className="absolute -top-1 -right-1 z-10">
+          <CheckCircle2 className="w-5 h-5 text-accent" />
+        </div>
+      )}
       <div
-        onClick={() => setIsFlipped(!isFlipped)}
+        onClick={handleFlip}
         className="relative w-full h-48 cursor-pointer"
         style={{ transformStyle: "preserve-3d" }}
       >

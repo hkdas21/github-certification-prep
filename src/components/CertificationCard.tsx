@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { BookOpen, Zap, Shield, Settings, Clock, Layers, ArrowRight, Sparkles } from "lucide-react";
 import { Track } from "@/content/tracks";
+import { useAllProgress } from "@/hooks/useProgress";
+import { ProgressIndicator } from "@/components/ProgressIndicator";
 import { cn } from "@/lib/utils";
 
 const iconMap = {
@@ -41,6 +43,8 @@ interface CertificationCardProps {
 
 export const CertificationCard = ({ track, index }: CertificationCardProps) => {
   const IconComponent = iconMap[track.icon as keyof typeof iconMap];
+  const { getTrackProgress } = useAllProgress();
+  const progress = getTrackProgress(track.id);
 
   return (
     <motion.div
@@ -99,9 +103,16 @@ export const CertificationCard = ({ track, index }: CertificationCardProps) => {
             </div>
           </div>
 
+          {/* Progress */}
+          {progress > 0 && (
+            <div className="mb-4">
+              <ProgressIndicator percentage={progress} size="sm" />
+            </div>
+          )}
+
           {/* CTA */}
           <div className="flex items-center text-primary font-medium text-sm group-hover:gap-2 transition-all">
-            <span>Start Learning</span>
+            <span>{progress > 0 ? "Continue Learning" : "Start Learning"}</span>
             <ArrowRight className="w-4 h-4 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
           </div>
 
