@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { BookOpen, HelpCircle, FlaskConical, Layers, Network } from "lucide-react";
@@ -8,12 +8,14 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { QuizEngine } from "@/components/QuizEngine";
 import { FlashCard } from "@/components/FlashCard";
+import { ProgressIndicator } from "@/components/ProgressIndicator";
 import { tracks } from "@/content/tracks";
 import { foundationsContent } from "@/content/certifications/foundations";
 import { actionsContent } from "@/content/certifications/actions";
 import { securityContent } from "@/content/certifications/security";
 import { adminContent } from "@/content/certifications/admin";
 import { copilotContent } from "@/content/certifications/copilot";
+import { useProgress } from "@/hooks/useProgress";
 import { cn } from "@/lib/utils";
 
 const contentMap: Record<string, typeof foundationsContent> = {
@@ -39,9 +41,28 @@ const CertificationPage = () => {
   const track = tracks.find((t) => t.id === trackId);
   const content = trackId ? contentMap[trackId] : null;
 
+  const {
+    progress,
+    markModulesRead,
+    markQuizCompleted,
+    markFlashcardViewed,
+    markLabsRead,
+    markMindmapViewed,
+    getOverallProgress,
+  } = useProgress(trackId || "");
+
+  // Mark section as read when tab changes
+  useEffect(() => {
+    if (activeTab === "modules") markModulesRead();
+    if (activeTab === "labs") markLabsRead();
+    if (activeTab === "mindmap") markMindmapViewed();
+  }, [activeTab, markModulesRead, markLabsRead, markMindmapViewed]);
+
   if (!track || !content) {
     return <Navigate to="/" replace />;
   }
+
+  const overallProgress = getOverallProgress();
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -53,18 +74,25 @@ const CertificationPage = () => {
             items={[{ label: track.title }]}
           />
 
-          {/* Header */}
+          {/* Header with Progress */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="mb-8"
           >
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-              {track.title}
-            </h1>
-            <p className="text-muted-foreground max-w-3xl">
-              {track.description}
-            </p>
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+              <div>
+                <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
+                  {track.title}
+                </h1>
+                <p className="text-muted-foreground max-w-3xl">
+                  {track.description}
+                </p>
+              </div>
+              <div className="w-full md:w-48">
+                <ProgressIndicator percentage={overallProgress} />
+              </div>
+            </div>
           </motion.div>
 
           {/* Tabs */}
@@ -114,7 +142,7 @@ const CertificationPage = () => {
                       Test your knowledge with these exam-style questions.
                     </p>
                   </div>
-                  <QuizEngine quizzes={content.quizzes} />
+                  <QuizEngine quizzes={content.quizzes} onComplete={markQuizCompleted} />
                 </div>
               </div>
             )}
@@ -132,7 +160,7 @@ const CertificationPage = () => {
                     Flashcards
                   </h2>
                   <p className="text-muted-foreground">
-                    Click on a card to reveal the definition.
+                    Click on a card to reveal the definition. ({progress.flashcardsViewed.length}/{content.flashcards.length} viewed)
                   </p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -142,6 +170,8 @@ const CertificationPage = () => {
                       term={card.term}
                       definition={card.definition}
                       index={index}
+                      isViewed={progress.flashcardsViewed.includes(card.term)}
+                      onView={(term) => markFlashcardViewed(term, content.flashcards.length)}
                     />
                   ))}
                 </div>

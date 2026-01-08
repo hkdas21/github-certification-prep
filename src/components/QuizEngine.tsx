@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, XCircle, ArrowRight, RotateCcw, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,9 +14,10 @@ interface Quiz {
 
 interface QuizEngineProps {
   quizzes: Quiz[];
+  onComplete?: (score: number, total: number) => void;
 }
 
-export const QuizEngine = ({ quizzes }: QuizEngineProps) => {
+export const QuizEngine = ({ quizzes, onComplete }: QuizEngineProps) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
@@ -44,6 +45,8 @@ export const QuizEngine = ({ quizzes }: QuizEngineProps) => {
       setShowExplanation(false);
     } else {
       setIsComplete(true);
+      const finalScore = selectedAnswer === currentQuestion.correctAnswer ? score + 1 : score;
+      onComplete?.(finalScore, quizzes.length);
     }
   };
 
