@@ -53,6 +53,7 @@ export default {
           purple: "hsl(var(--github-purple))",
           orange: "hsl(var(--github-orange))",
           red: "hsl(var(--github-red))",
+          cyan: "hsl(var(--github-cyan))",
         },
       },
       borderRadius: {

@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AuthorBio } from "@/components/AuthorBio";
 import { CertificationCard } from "@/components/CertificationCard";
+import { Contributors } from "@/components/Contributors";
 import { tracks } from "@/content/tracks";
 
 const Index = () => {
@@ -39,9 +40,6 @@ const Index = () => {
                 ace your GitHub certification exams.
               </p>
             </motion.div>
-
-            {/* Author Bio */}
-            <AuthorBio />
           </div>
         </section>
 
@@ -62,10 +60,24 @@ const Index = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tracks.map((track, index) => (
               <CertificationCard key={track.id} track={track} index={index} />
             ))}
+          </div>
+        </section>
+
+        {/* Author Bio Section */}
+        <section className="border-t border-border bg-card/50">
+          <div className="container py-16">
+            <AuthorBio />
+          </div>
+        </section>
+
+        {/* Contributors Section */}
+        <section className="border-t border-border">
+          <div className="container py-16">
+            <Contributors />
           </div>
         </section>
 

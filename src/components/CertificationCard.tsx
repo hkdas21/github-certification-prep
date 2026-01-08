@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { BookOpen, Zap, Shield, Settings, Clock, Layers, ArrowRight } from "lucide-react";
+import { BookOpen, Zap, Shield, Settings, Clock, Layers, ArrowRight, Sparkles } from "lucide-react";
 import { Track } from "@/content/tracks";
 import { cn } from "@/lib/utils";
 
@@ -9,6 +9,7 @@ const iconMap = {
   Zap,
   Shield,
   Settings,
+  Sparkles,
 };
 
 const colorVariants = {
@@ -16,6 +17,7 @@ const colorVariants = {
   green: "from-github-green/20 to-github-green/5 border-github-green/30 hover:border-github-green/50",
   purple: "from-github-purple/20 to-github-purple/5 border-github-purple/30 hover:border-github-purple/50",
   orange: "from-github-orange/20 to-github-orange/5 border-github-orange/30 hover:border-github-orange/50",
+  cyan: "from-github-cyan/20 to-github-cyan/5 border-github-cyan/30 hover:border-github-cyan/50",
 };
 
 const iconColorVariants = {
@@ -23,6 +25,7 @@ const iconColorVariants = {
   green: "text-github-green",
   purple: "text-github-purple",
   orange: "text-github-orange",
+  cyan: "text-github-cyan",
 };
 
 const badgeVariants = {
