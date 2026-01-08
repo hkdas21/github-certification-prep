@@ -273,4 +273,65 @@ jobs:
     { term: "Composite Action", definition: "A custom action that combines multiple steps into a single reusable action." },
     { term: "Reusable Workflow", definition: "A workflow that can be called from other workflows, promoting DRY principles in automation." },
   ],
+
+  mindmap: `
+# GitHub Actions Mindmap
+
+\`\`\`mermaid
+mindmap
+  root((GitHub Actions))
+    Workflows
+      YAML Syntax
+      Triggers/Events
+        push
+        pull_request
+        schedule
+        workflow_dispatch
+      Jobs
+        Steps
+        Dependencies
+    Runners
+      GitHub-hosted
+        Ubuntu
+        Windows
+        macOS
+      Self-hosted
+        Custom environments
+    Actions
+      Marketplace
+      Custom Actions
+        JavaScript
+        Docker
+        Composite
+    Features
+      Secrets
+      Variables
+      Environments
+      Matrix Strategy
+      Caching
+      Artifacts
+    CI/CD
+      Build
+      Test
+      Deploy
+      Release
+\`\`\`
+
+## Workflow Execution Flow
+
+\`\`\`mermaid
+flowchart TD
+    A[Event Trigger] --> B[Workflow Started]
+    B --> C{Multiple Jobs?}
+    C -->|Yes| D[Run Jobs in Parallel]
+    C -->|No| E[Run Single Job]
+    D --> F[Job 1]
+    D --> G[Job 2]
+    E --> H[Steps Execute Sequentially]
+    F --> H
+    G --> H
+    H --> I[Artifacts Saved]
+    I --> J[Workflow Complete]
+\`\`\`
+  `,
 };

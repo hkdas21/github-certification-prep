@@ -254,4 +254,63 @@ Select some code and ask:
     { term: "Inline Chat", definition: "The ability to open Copilot Chat directly within your code editor at the cursor position." },
     { term: "Responsible AI", definition: "Practices ensuring AI-generated code is reviewed, tested, and validated before use in production." },
   ],
+
+  mindmap: `
+# GitHub Copilot Mindmap
+
+\`\`\`mermaid
+mindmap
+  root((GitHub Copilot))
+    Core Features
+      Code Completion
+        Ghost Text
+        Suggestion Panel
+        Multi-line Suggestions
+      Copilot Chat
+        Inline Chat
+        Sidebar Chat
+        Slash Commands
+    Prompt Engineering
+      Comments
+        Descriptive
+        Contextual
+      Variable Names
+      Function Signatures
+      Examples in Comments
+    IDE Integration
+      VS Code
+      Visual Studio
+      JetBrains IDEs
+      Neovim
+      GitHub.com
+    Enterprise
+      Organization Policies
+      Content Exclusions
+      Audit Logs
+      Usage Metrics
+    Best Practices
+      Code Review
+      Testing AI Code
+      Security Validation
+      License Compliance
+        Code Referencing
+\`\`\`
+
+## Copilot Interaction Flow
+
+\`\`\`mermaid
+flowchart LR
+    A[Write Code/Comment] --> B[Copilot Analyzes Context]
+    B --> C[AI Model Generates]
+    C --> D{Suggestion Type}
+    D -->|Inline| E[Ghost Text Appears]
+    D -->|Chat| F[Response in Chat]
+    E --> G{Accept?}
+    G -->|Tab| H[Code Inserted]
+    G -->|Esc| I[Dismissed]
+    F --> J[Review & Apply]
+    H --> K[Review & Test]
+    J --> K
+\`\`\`
+  `,
 };

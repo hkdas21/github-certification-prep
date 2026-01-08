@@ -231,4 +231,60 @@ Create a pull request on GitHub to merge your feature branch into main.
     { term: "Staging Area", definition: "An intermediate area where commits are prepared before being committed to the repository." },
     { term: "Remote", definition: "A common repository that all team members use to exchange their changes, typically hosted on GitHub." },
   ],
+
+  mindmap: `
+# GitHub Foundations Mindmap
+
+\`\`\`mermaid
+mindmap
+  root((GitHub Foundations))
+    Git Basics
+      Repositories
+        Local
+        Remote
+      Commits
+        Staging Area
+        Commit Messages
+      Branches
+        Main/Master
+        Feature Branches
+        Merging
+    Collaboration
+      Pull Requests
+        Code Review
+        Discussions
+        Approvals
+      Issues
+        Bug Tracking
+        Feature Requests
+        Labels
+      Projects
+        Kanban Boards
+        Milestones
+    GitHub Features
+      Actions
+        CI/CD
+        Automation
+      Pages
+        Static Sites
+      Packages
+        Container Registry
+    Security
+      Branch Protection
+      Code Owners
+      Secrets
+\`\`\`
+
+## Key Relationships
+
+\`\`\`mermaid
+flowchart LR
+    A[Local Repo] -->|push| B[Remote Repo]
+    B -->|pull| A
+    B -->|fork| C[Forked Repo]
+    C -->|pull request| B
+    D[Branch] -->|merge| E[Main Branch]
+    F[Commit] -->|part of| D
+\`\`\`
+  `,
 };
