@@ -709,7 +709,7 @@ Tell your students to run this **once** on their machines:
 
 \`\`\`bash
 
-git config \--global alias.adog "log \--all \--decorate \--oneline \--graph"
+git config --global alias.adog "log --all --decorate --oneline --graph"
 \`\`\`
 
 Now, they can just type git adog (think: "A Dog") to see their entire project structure beautifully visualized anytime\!
