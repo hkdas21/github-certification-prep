@@ -245,7 +245,7 @@ Today, we build in the workshop, ship it to the showroom, and make it live on th
 ### **Prerequisites**
 
 * A terminal (Git bash on Windows, Terminal on Mac/Linux).  
-* Git installed (git \--version returns a number).  
+* Git installed (git --version returns a number).  
 * A GitHub.com account.  
 * A text editor (VS Code recommended).
 
@@ -358,7 +358,7 @@ git checkout -b feature-style
 
 \`\`\`
 
-* **Concept:** checkout \-b means "Create a new branch named 'feature-style' AND switch to it immediately."
+* **Concept:** checkout -b means "Create a new branch named 'feature-style' AND switch to it immediately."
 
 ### **Step 8: Make changes safely**
 
@@ -427,7 +427,7 @@ We have a local repo. Now we need a remote one on GitHub so we can share it.
 ### **Step 11: Create a GitHub Repository**
 
 1. Log into GitHub.com.  
-2. Click the "+" icon in the top right \-\> "New Repository".  
+2. Click the "+" icon in the top right -> "New Repository".  
 3. **Repository Name:** my-portfolio-demo (or similar).  
 4. **Important:** Select "Public", but DO NOT check any boxes under "Initialize this repository with..." (No README, No .gitignore yet). We want an empty shell.  
 5. Click "Create repository".
@@ -441,13 +441,13 @@ Copy the lines that look like this (use your actual URL):
 \`\`\`bash
 
 git remote add origin https://github.com/YOUR\_USERNAME/my-portfolio-demo.git  
-git branch \-M main  
-git push \-u origin main
+git branch -M main  
+git push -u origin main
 
 \`\`\`
 
-* **Concept \- Remote:** You just told your local Git that "origin" is a nickname for that specific URL on GitHub.  
-* **Concept \- Push:** You just sent your local main branch commits up to the GitHub cloud.
+* **Concept - Remote:** You just told your local Git that "origin" is a nickname for that specific URL on GitHub.  
+* **Concept - Push:** You just sent your local main branch commits up to the GitHub cloud.
 
 **Refresh your GitHub page.** You should see your index.html there\!
 
@@ -541,11 +541,11 @@ git switch main
 \# Add and commit it if you haven't.
 \`\`\`
 
-### **Step 18: Branch A \- The "Professional" Change**
+### **Step 18: Branch A - The "Professional" Change**
 
 We will create a branch to make the headline look professional.
 
-1. git checkout \-b professional-version  
+1. git checkout -b professional-version  
 2. Open index.html and change \<h1\>My Portfolio\</h1\> to:  
 3. HTML
 
@@ -558,18 +558,18 @@ We will create a branch to make the headline look professional.
 \`\`\`bash
 
 git add index.html  
-git commit \-m "Updated to professional headline"
+git commit -m "Updated to professional headline"
 \`\`\`
 
  
 
-### **Step 19: Branch B \- The "Creative" Change (The Setup)**
+### **Step 19: Branch B - The "Creative" Change (The Setup)**
 
 **Crucial Step:** You must switch back to main **before** creating the second branch so that both branches start from the same "old" version of the file.
 
 1. git switch main  
    (Notice the headline went back to "My Portfolio")  
-2. git checkout \-b creative-version  
+2. git checkout -b creative-version  
 3. Open index.html. The line still says \<h1\>My Portfolio\</h1\>. Change it to:  
 4. HTML
 
@@ -582,7 +582,7 @@ git commit \-m "Updated to professional headline"
  \`\`\`bash
 
 git add index.html  
-git commit \-m "Updated to creative headline"
+git commit -m "Updated to creative headline"
 \`\`\`
 8.   
 9. 
@@ -642,7 +642,7 @@ HTML
 \`\`\`bash
 
 git add index.html  
-git commit \-m "Resolved conflict: Decided to go with professional title"
+git commit -m "Resolved conflict: Decided to go with professional title"
 \`\`\`
 
 ---
@@ -667,15 +667,15 @@ Now that you’ve handled a merge conflict, let's look at the "map" of what actu
 
 Run this command in your terminal:
 
-\`\`\`bash
-git log \--graph \--oneline \--all
-\`\`\`
+```bash
+git log --graph --oneline --all
+```
 
 ### **Breaking down the command:**
 
-* \--graph: Draws the "train tracks" using text characters.  
-* \--oneline: Squeezes each commit into one line so it's easier to read.  
-* \--all: Shows **all** branches, not just the one you are currently standing on.
+* --graph: Draws the "train tracks" using text characters.  
+* --oneline: Squeezes each commit into one line so it's easier to read.  
+* --all: Shows **all** branches, not just the one you are currently standing on.
 
 ---
 
@@ -685,7 +685,7 @@ When you run that command, you should see something that looks like this:
 
 Plaintext
 
-|* 7a2b3c4 (HEAD \-\> main) Resolved conflict: Decided to go with professional title  
+|* 7a2b3c4 (HEAD -> main) Resolved conflict: Decided to go with professional title  
 |\    
 | \* 5e6f7g8 (creative-version) Updated to creative headline  
 |* | 1a2b3c4 (professional-version) Updated to professional headline  
@@ -695,7 +695,7 @@ Plaintext
 **How to interpret this:**
 
 1. **The Bottom (9z8y7x6):** This is where you started. Both branches share this history.  
-2. **The Split (|\\):** This is the moment you ran git checkout \-b from main while another branch already existed. The history **diverged**.  
+2. **The Split (|\\):** This is the moment you ran git checkout -b from main while another branch already existed. The history **diverged**.  
 3. **The Parallel Nodes:** Notice how the "Creative" and "Professional" commits sit side-by-side? These happened in parallel universes.  
 4. **The Merge (7a2b3c4):** The two lines of the "track" come back together. This is your **Merge Commit**—the bridge you built by resolving the conflict.
 
@@ -703,14 +703,14 @@ Plaintext
 
 ### **Pro-Tip: Create an Alias**
 
-The git log \--graph \--oneline \--all command is long and hard to remember. Most professional developers create a "shortcut" (alias) for it.
+The git log --graph --oneline --all command is long and hard to remember. Most professional developers create a "shortcut" (alias) for it.
 
 Tell your students to run this **once** on their machines:
 
-\`\`\`bash
+```bash
 
-git config \--global alias.adog "log \--all \--decorate \--oneline \--graph"
-\`\`\`
+git config --global alias.adog "log --all --decorate --oneline --graph"
+```
 
 Now, they can just type git adog (think: "A Dog") to see their entire project structure beautifully visualized anytime\!
 
@@ -722,7 +722,7 @@ To wrap up the session, ask the students to:
 
 1. Look at their git adog output.  
 2. Identify which commit is their "Merge Commit."  
-3. Delete their experimental branches (git branch \-d creative-version) and run git adog again to see how the labels (but not the history) change.
+3. Delete their experimental branches (git branch -d creative-version) and run git adog again to see how the labels (but not the history) change.
 
 ## Part 10: The Time Traveler's Safety Net
 
@@ -763,8 +763,8 @@ To wrap up the session, ask the students to:
 | Command | What it does |
 | :---- | :---- |
 | git init | Starts a brand new local repository in your current folder. |
-| git config \--global user.name "Your Name" | Sets your name for your commits (do this once). |
-| git config \--global user.email "email@example.com" | Sets your email for your commits (do this once). |
+| git config --global user.name "Your Name" | Sets your name for your commits (do this once). |
+| git config --global user.email "email@example.com" | Sets your email for your commits (do this once). |
 
 ## **📝 The Daily Workflow (Save Points)**
 
@@ -773,24 +773,24 @@ To wrap up the session, ask the students to:
 | git status | **The most important command.** Tells you what files are changed or staged. |
 | git add \<file\> | Stages a specific file (puts it in the "box"). |
 | git add . | Stages **all** changed files in the current directory. |
-| git commit \-m "message" | Permanently saves your staged snapshot with a descriptive note. |
+| git commit -m "message" | Permanently saves your staged snapshot with a descriptive note. |
 
 ## **🌿 Branching (Parallel Universes)**
 
 | Command | What it does |
 | :---- | :---- |
 | git branch | Lists all your local branches. |
-| git checkout \-b \<name\> | Creates a new branch and switches to it immediately. |
+| git checkout -b \<name\> | Creates a new branch and switches to it immediately. |
 | git switch \<name\> | Switches to an existing branch. |
 | git merge \<name\> | Merges the specified branch into your **current** branch. |
-| git branch \-d \<name\> | Deletes a branch (use this after a successful merge). |
+| git branch -d \<name\> | Deletes a branch (use this after a successful merge). |
 
 ## **☁️ GitHub & Remotes (The Showroom)**
 
 | Command | What it does |
 | :---- | :---- |
 | git remote add origin \<url\> | Links your local folder to a repository on GitHub. |
-| git push \-u origin main | Sends your local commits to GitHub (the \-u remembers the link for next time). |
+| git push -u origin main | Sends your local commits to GitHub (the -u remembers the link for next time). |
 | git push | Sends updates to GitHub after the first link is established. |
 | git pull | Grabs the latest changes from GitHub and merges them into your local code. |
 
@@ -798,10 +798,10 @@ To wrap up the session, ask the students to:
 
 | Command | What it does |
 | :---- | :---- |
-| git log \--oneline | Shows a condensed list of your commit history. |
+| git log --oneline | Shows a condensed list of your commit history. |
 | git adog | (Our custom shortcut) Shows the "train tracks" of all branches and merges. |
 | git diff | Shows the exact line-by-line changes you've made but haven't staged yet. |
-| git merge \--abort | **Emergency Button:** Cancels a messy merge conflict and resets your files. |
+| git merge --abort | **Emergency Button:** Cancels a messy merge conflict and resets your files. |
 
 ---
 
@@ -872,7 +872,7 @@ To wrap up the session, ask the students to:
 
 ### **Task 4: The "Final Polish" & Sync**
 
-1. **Run your favorite visualization command: git adog (or git log \--graph \--oneline \--all).**  
+1. **Run your favorite visualization command: git adog (or git log --graph --oneline --all).**  
 2. **Observe how the "train tracks" look now with two features merged in.**  
 3. **Push your updated main branch to GitHub:**  
  
@@ -909,9 +909,9 @@ git push origin main
 
 2. git branch feature-fix
 
-3. git commit \-m 'feature-fix'
+3. git commit -m 'feature-fix'
 
-4. git checkout \-b feature-fix
+4. git checkout -b feature-fix
 
 3\.  What is the most common cause of a 'Merge Conflict' in Git?
 
@@ -971,13 +971,13 @@ D.To change your GitHub username or profile settings.
 
 8\. You have made changes to your code. What is the correct sequence of commands to save these changes and send them to GitHub?
 
-       A. git add . → git commit \-m 'message' → git push
+       A. git add . → git commit -m 'message' → git push
 
-       B. git add . → git push → git commit \-m 'message'
+       B. git add . → git push → git commit -m 'message'
 
-3. git push → git add . → git commit \-m 'message'
+3. git push → git add . → git commit -m 'message'
 
-4. git commit \-m 'message' → git push → git add .
+4. git commit -m 'message' → git push → git add .
 
 9\. What happens when you run 'git pull'?
 
