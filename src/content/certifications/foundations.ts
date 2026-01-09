@@ -288,16 +288,16 @@ Let's create the homepage of your portfolio.
 
 HTML
 
-\<\!DOCTYPE **html**\>  
-\<html\>  
-\<head\>  
-    \<title\>My Portfolio\</title\>  
-\</head\>  
-\<body\>  
-    \<h1\>Hello, I'm \[Your Name\]\!\</h1\>  
-    \<p\>I am a software developer currently learning Git.\</p\>  
-\</body\>  
-\</html\>
+<!DOCTYPE **html**>  
+<html>  
+<head>  
+    <title>My Portfolio</title>  
+</head>  
+<body>  
+    <h1>Hello, I'm [Your Name]!</h1>  
+    <p>I am a software developer currently learning Git.</p>  
+</body>  
+</html>
 
 ### **Step 4: Check the status**
 
@@ -379,10 +379,10 @@ body {
 
 HTML
 
-\<head\>  
-    \<title\>My Portfolio\</title\>  
-    \<link rel\="stylesheet" href\="style.css"\>   
-\</head\>
+<head>  
+    <title>My Portfolio</title>  
+    <link rel="stylesheet" href="style.css">   
+</head>
 
 4. Save both files.
 
@@ -738,9 +738,9 @@ To wrap up the session, ask the students to:
 1. **Make another mistake: Change your background color in \`style.css\` to \`hotpink\`.**  
 2. **Commit it: \`git add .\` then \`git commit -m "Pink background"\`.**  
 3. **The "Oh No" moment: You decide that commit should never have existed.**  
-4. **Reset it: Run \`git reset --hard HEAD~1\`.**  
+4. **Reset it: Run `git reset --hard HEAD~1`.**  
    * **\`HEAD~1\` means "Go back one step from where I am now."**  
-   * **\`--hard\` means "Discard the changes entirely from my files too."**  
+   * **`--hard` means "Discard the changes entirely from my files too."**  
 5. **Result: Run \`git log\`. The "Pink background" commit has completely vanished from history. It's like it never happened.**
 
 **⚠️ Warning: Never use `git reset --hard` on commits that you have already pushed to GitHub! It will cause massive headaches for anyone else working on the project. Use `revert` for public history and `reset` for private local cleanups.**
@@ -817,13 +817,13 @@ To wrap up the session, ask the students to:
 1. **Create a new branch called feature-contact.**  
 2. **Open your index.html and add a new section at the bottom:**
 
-**\<section id\="contact"\>**
+**<section id="contact">**
 
-    **\<h2\>Contact Me\</h2\>**
+    **<h2>Contact Me</h2>**
 
-    **\<p\>Email: student@example.com\</p\>**
+    **<p>Email: student@example.com</p>**
 
-**\</section\>**
+**</section>**
 
 3. **Stage and Commit this change with the message "Add contact section".**  
 4. **Push this branch to GitHub.**
