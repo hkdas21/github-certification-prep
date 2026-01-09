@@ -971,13 +971,13 @@ D.To change your GitHub username or profile settings.
 
 8\. You have made changes to your code. What is the correct sequence of commands to save these changes and send them to GitHub?
 
-       A. git add . → git commit \-m 'message' → git push
+       A. git add . → git commit -m 'message' → git push
 
-       B. git add . → git push → git commit \-m 'message'
+       B. git add . → git push → git commit -m 'message'
 
-3. git push → git add . → git commit \-m 'message'
+3. git push → git add . → git commit -m 'message'
 
-4. git commit \-m 'message' → git push → git add .
+4. git commit -m 'message' → git push → git add .
 
 9\. What happens when you run 'git pull'?
 
