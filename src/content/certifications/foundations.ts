@@ -642,7 +642,7 @@ HTML
 \`\`\`bash
 
 git add index.html  
-git commit \-m "Resolved conflict: Decided to go with professional title"
+git commit -m "Resolved conflict: Decided to go with professional title"
 \`\`\`
 
 ---
