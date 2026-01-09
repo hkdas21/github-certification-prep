@@ -909,9 +909,9 @@ git push origin main
 
 2. git branch feature-fix
 
-3. git commit \-m 'feature-fix'
+3. git commit -m 'feature-fix'
 
-4. git checkout \-b feature-fix
+4. git checkout -b feature-fix
 
 3\.  What is the most common cause of a 'Merge Conflict' in Git?
 
