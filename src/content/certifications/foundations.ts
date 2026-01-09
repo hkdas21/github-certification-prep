@@ -427,7 +427,7 @@ We have a local repo. Now we need a remote one on GitHub so we can share it.
 ### **Step 11: Create a GitHub Repository**
 
 1. Log into GitHub.com.  
-2. Click the "+" icon in the top right \-\> "New Repository".  
+2. Click the "+" icon in the top right -> "New Repository".  
 3. **Repository Name:** my-portfolio-demo (or similar).  
 4. **Important:** Select "Public", but DO NOT check any boxes under "Initialize this repository with..." (No README, No .gitignore yet). We want an empty shell.  
 5. Click "Create repository".
@@ -446,8 +446,8 @@ git push -u origin main
 
 \`\`\`
 
-* **Concept \- Remote:** You just told your local Git that "origin" is a nickname for that specific URL on GitHub.  
-* **Concept \- Push:** You just sent your local main branch commits up to the GitHub cloud.
+* **Concept - Remote:** You just told your local Git that "origin" is a nickname for that specific URL on GitHub.  
+* **Concept - Push:** You just sent your local main branch commits up to the GitHub cloud.
 
 **Refresh your GitHub page.** You should see your index.html there\!
 
@@ -541,7 +541,7 @@ git switch main
 \# Add and commit it if you haven't.
 \`\`\`
 
-### **Step 18: Branch A \- The "Professional" Change**
+### **Step 18: Branch A - The "Professional" Change**
 
 We will create a branch to make the headline look professional.
 
@@ -563,7 +563,7 @@ git commit -m "Updated to professional headline"
 
  
 
-### **Step 19: Branch B \- The "Creative" Change (The Setup)**
+### **Step 19: Branch B - The "Creative" Change (The Setup)**
 
 **Crucial Step:** You must switch back to main **before** creating the second branch so that both branches start from the same "old" version of the file.
 
@@ -575,17 +575,13 @@ git commit -m "Updated to professional headline"
 
 \<h1\>Welcome to the Creative Lab of \[Your Name\]\</h1\>
 
-5.   
-6.   
-7. **Save and Commit:**  
+5. **Save and Commit:**  
 
  \`\`\`bash
 
 git add index.html  
 git commit -m "Updated to creative headline"
 \`\`\`
-8.   
-9. 
 
 ### **Step 20: The Collision**
 
@@ -597,15 +593,13 @@ Now we have two branches that both changed the same line from the same original 
 
 git switch main
 \`\`\`
-2.   
-3.   
-4. Merge the first branch (This will be a **Fast-Forward**, no conflict yet):  
+2. Merge the first branch (This will be a **Fast-Forward**, no conflict yet):  
 \`\`\`bash
 
 git merge professional-version
 \`\`\`   
 
-5. Now, try to merge the second branch. **This will trigger the conflict:**  
+3. Now, try to merge the second branch. **This will trigger the conflict:**  
  \`\`\`bash
 
 git merge creative-version
@@ -707,10 +701,10 @@ The git log --graph --oneline --all command is long and hard to remember. Most p
 
 Tell your students to run this **once** on their machines:
 
-\`\`\`bash
+```bash
 
 git config --global alias.adog "log --all --decorate --oneline --graph"
-\`\`\`
+```
 
 Now, they can just type git adog (think: "A Dog") to see their entire project structure beautifully visualized anytime\!
 
@@ -750,7 +744,7 @@ To wrap up the session, ask the students to:
    * **\`--hard\` means "Discard the changes entirely from my files too."**  
 5. **Result: Run \`git log\`. The "Pink background" commit has completely vanished from history. It's like it never happened.**
 
-**⚠️ Warning: Never use \`git reset --hard\` on commits that you have already pushed to GitHub\! It will cause massive headaches for anyone else working on the project. Use \`revert\` for public history and \`reset\` for private local cleanups.**
+**⚠️ Warning: Never use `git reset --hard` on commits that you have already pushed to GitHub! It will cause massive headaches for anyone else working on the project. Use `revert` for public history and `reset` for private local cleanups.**
 
 ## **Git Cheat Sheet**
 
