@@ -554,7 +554,6 @@ We will create a branch to make the headline look professional.
  
    
 6. **Save and Commit:**  
-7. 
 \`\`\`bash
 
 git add index.html  
