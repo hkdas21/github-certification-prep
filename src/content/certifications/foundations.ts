@@ -258,7 +258,7 @@ Today, we build in the workshop, ship it to the showroom, and make it live on th
 We need a folder to hold your project.
 
 1. Open your terminal.  
-2. Navigate to where you want to keep your projects (e.g., cd \~/Desktop or cd \~/Documents).  
+2. Navigate to where you want to keep your projects (e.g., cd ~/Desktop or cd ~/Documents).  
 3. Create a new folder and enter it:
 
 \`\`\`bash
