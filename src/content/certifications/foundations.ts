@@ -936,7 +936,7 @@ git push origin main
 Correct answer:D   
 In Git, 'HEAD' refers to the branch you are currently standing on during the merge attempt.
 
-5\. When visualizing history with git log \--graph \--oneline, what does a 'Fast-Forward' merge look like?
+5\. When visualizing history with git log --graph --oneline, what does a 'Fast-Forward' merge look like?
 
 1. Two lines that split apart and then curve back together at a 'Merge Commit' node.
 
