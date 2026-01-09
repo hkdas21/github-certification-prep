@@ -575,17 +575,13 @@ git commit -m "Updated to professional headline"
 
 \<h1\>Welcome to the Creative Lab of \[Your Name\]\</h1\>
 
-5.   
-6.   
-7. **Save and Commit:**  
+5. **Save and Commit:**  
 
  \`\`\`bash
 
 git add index.html  
 git commit -m "Updated to creative headline"
 \`\`\`
-8.   
-9. 
 
 ### **Step 20: The Collision**
 
@@ -597,15 +593,13 @@ Now we have two branches that both changed the same line from the same original 
 
 git switch main
 \`\`\`
-2.   
-3.   
-4. Merge the first branch (This will be a **Fast-Forward**, no conflict yet):  
+2. Merge the first branch (This will be a **Fast-Forward**, no conflict yet):  
 \`\`\`bash
 
 git merge professional-version
 \`\`\`   
 
-5. Now, try to merge the second branch. **This will trigger the conflict:**  
+3. Now, try to merge the second branch. **This will trigger the conflict:**  
  \`\`\`bash
 
 git merge creative-version
