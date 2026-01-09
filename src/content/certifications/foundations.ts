@@ -750,7 +750,7 @@ To wrap up the session, ask the students to:
    * **`--hard` means "Discard the changes entirely from my files too."**  
 5. **Result: Run `git log`. The "Pink background" commit has completely vanished from history. It's like it never happened.**
 
-**⚠️ Warning: Never use `git reset --hard` on commits that you have already pushed to GitHub\! It will cause massive headaches for anyone else working on the project. Use `revert` for public history and `reset` for private local cleanups.**
+**⚠️ Warning: Never use `git reset --hard` on commits that you have already pushed to GitHub! It will cause massive headaches for anyone else working on the project. Use `revert` for public history and `reset` for private local cleanups.**
 
 ## **Git Cheat Sheet**
 
