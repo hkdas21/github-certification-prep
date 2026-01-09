@@ -661,9 +661,9 @@ Now that you’ve handled a merge conflict, let's look at the "map" of what actu
 
 Run this command in your terminal:
 
-```bash
+\`\`\`bash
 git log --graph --oneline --all
-```
+\`\`\`
 
 ### **Breaking down the command:**
 
@@ -722,27 +722,27 @@ To wrap up the session, ask the students to:
 
 **In this lab, you will intentionally make a "mistake" on your portfolio and learn how to fix it using two different methods.**
 
-### **Task 1: The "Safe" Undo (`git revert`)**
+### **Task 1: The "Safe" Undo (\`git revert\`)**
 
 **Use this when you have already pushed to GitHub and want to undo a specific change without confusing your teammates.**
 
-1. **Make a mistake: Open `index.html` and add something silly, like `<h1>I AM A POTATO</h1>`.**  
-2. **Commit it: `git add .` then `git commit -m "Added potato title"`.**  
-3. **Find the ID: Run `git log --oneline`. Copy the 7-character ID (SHA) of that "potato" commit.**  
-4. **Undo it: Run `git revert <your-commit-id>`.**  
-5. **Result: Git will open a text editor asking for a message. Save and close. Notice that the potato is gone, but if you run `git log`, the "potato" commit is still in your history—now followed by a "Revert" commit.**
+1. **Make a mistake: Open \`index.html\` and add something silly, like \`<h1>I AM A POTATO</h1>\`.**  
+2. **Commit it: \`git add .\` then \`git commit -m "Added potato title"\`.**  
+3. **Find the ID: Run \`git log --oneline\`. Copy the 7-character ID (SHA) of that "potato" commit.**  
+4. **Undo it: Run \`git revert <your-commit-id>\`.**  
+5. **Result: Git will open a text editor asking for a message. Save and close. Notice that the potato is gone, but if you run \`git log\`, the "potato" commit is still in your history—now followed by a "Revert" commit.**
 
-### **Task 2: The "Eraser" Undo (`git reset`)**
+### **Task 2: The "Eraser" Undo (\`git reset\`)**
 
 **Use this only for local mistakes that you haven't shared with anyone else yet.**
 
-1. **Make another mistake: Change your background color in `style.css` to `hotpink`.**  
-2. **Commit it: `git add .` then `git commit -m "Pink background"`.**  
+1. **Make another mistake: Change your background color in \`style.css\` to \`hotpink\`.**  
+2. **Commit it: \`git add .\` then \`git commit -m "Pink background"\`.**  
 3. **The "Oh No" moment: You decide that commit should never have existed.**  
-4. **Reset it: Run `git reset --hard HEAD~1`.**  
-   * **`HEAD~1` means "Go back one step from where I am now."**  
-   * **`--hard` means "Discard the changes entirely from my files too."**  
-5. **Result: Run `git log`. The "Pink background" commit has completely vanished from history. It's like it never happened.**
+4. **Reset it: Run \`git reset --hard HEAD~1\`.**  
+   * **\`HEAD~1\` means "Go back one step from where I am now."**  
+   * **\`--hard\` means "Discard the changes entirely from my files too."**  
+5. **Result: Run \`git log\`. The "Pink background" commit has completely vanished from history. It's like it never happened.**
 
 **⚠️ Warning: Never use `git reset --hard` on commits that you have already pushed to GitHub! It will cause massive headaches for anyone else working on the project. Use `revert` for public history and `reset` for private local cleanups.**
 
@@ -1012,7 +1012,7 @@ D.To change your GitHub username or profile settings.
 * **Merging Logic:**  
   * **Fast-Forward Merge:** Happens when the destination branch hasn't moved. Git just moves the "label" forward. It looks like a straight line in your log.  
   * **Three-Way Merge:** Happens when both branches have unique commits. Git creates a new "Merge Commit" to join them. This looks like "train tracks" splitting and joining in your log.  
-* **Conflict Markers:** Identifying and interpreting `<<<<<<< HEAD`, `=======`, and `>>>>>>>` to manually resolve disagreements between branches.  
+* **Conflict Markers:** Identifying and interpreting \`<<<<<<< HEAD\`, \`=======\`, and \`>>>>>>>\` to manually resolve disagreements between branches.  
 * **The PR Workflow:** Using Pull Requests as a social and professional layer for code review before integrating changes into a main codebase.
 
 **Vocabulary List:**
@@ -1023,14 +1023,14 @@ D.To change your GitHub username or profile settings.
 * **Origin:** The default nickname for your remote repository on GitHub.  
 * **Clone:** Creating a local copy of a remote repository.  
 * **Pull:** A command that fetches changes from a remote and merges them into your local branch.  
-* **Alias:** A custom shortcut for long Git commands (e.g., `git adog`).
+* **Alias:** A custom shortcut for long Git commands (e.g., \`git adog\`).
 
 **Key Questions:**
 
-* Why is it important to use `git status` before and after staging files?  
+* Why is it important to use \`git status\` before and after staging files?  
 * How does a 'Fast-Forward' merge differ visually from a 'Three-Way' merge in a git log?  
 * What are the three steps required to resolve a merge conflict after you've edited the files?  
-* What is the difference between a `git branch` and a `git checkout -b`?  
+* What is the difference between a \`git branch\` and a \`git checkout -b\`?  
 * How does a Pull Request facilitate better code quality in a team environment?
 
   `,
