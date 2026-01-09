@@ -876,9 +876,9 @@ To wrap up the session, ask the students to:
 2. **Observe how the "train tracks" look now with two features merged in.**  
 3. **Push your updated main branch to GitHub:**  
  
-\`\`\`bash**
+\`\`\`bash
 
-git push origin main**
+git push origin main
 \`\`\`
    
 4. **Check your live GitHub Pages URL to ensure your new sections are visible to the world\!**
